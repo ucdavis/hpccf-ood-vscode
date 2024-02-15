@@ -1,0 +1,10 @@
+---
+batch_connect:
+  template: "basic"
+script:
+  native:
+    - "--cpus-per-task"
+    - "<%= cores %>"
+    - "--mem"
+    - "<%= mem %>G"
+  copy_environment: true

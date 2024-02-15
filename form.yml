@@ -1,0 +1,46 @@
+---
+cluster: "farm"
+form:
+  - modules
+  - auto_accounts
+  - auto_queues
+  - cores
+  - mem
+  - bc_num_hours
+  - working_dir
+
+attributes:
+  modules: "code-server"
+  auto_accounts:
+    help: |
+      Select the slurm group account (i.e adamgrp)
+  auto_queues:
+    help: |
+      Select a slurm partition. **We strongly recommend a high priority partition**
+  cores:
+    widget: "number_field"
+    label: "Number of cores"
+    value: 8
+    min: 1
+    max: 256
+    help: |
+      Enter the number of cores needed for your job
+  mem:
+    widget: "number_field"
+    label: "Amount of memory"
+    value: 32
+    min: 4
+    max: 4096
+    help: |
+      Enter the amount of RAM in GB you need for your job
+  bc_num_hours:
+    max: 60
+    help: |
+      Your job will be automatically killed after this amount of time
+  working_dir:
+    label: "Working Directory"
+    data-filepicker: true
+    data-target-file-type: dirs  # Valid values are: files, dirs, or both
+    readonly: false
+    help: |
+      Select the directory wherein you want to work (defaults to $HOME)
