@@ -52,7 +52,7 @@ setup_env() {
   module purge
 
   # Load the require modules
-  module load <%= context.modules %>
+  module load <%= context.modules %> <%= context.extra_modules %>
 
   # List loaded modules
   module list
