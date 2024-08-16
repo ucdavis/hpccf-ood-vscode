@@ -1,5 +1,5 @@
 ---
-cluster: "farm"
+cluster: "franklin"
 form:
   - modules
   - auto_accounts
