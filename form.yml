@@ -1,5 +1,5 @@
 ---
-cluster: "farm"
+cluster: "hive"
 form:
   - modules
   - auto_accounts
