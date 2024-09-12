@@ -11,8 +11,4 @@ script:
     - "--gres"
     - "gpu:<%= gpu_num.to_s %>"
     <%- end -%>
-  job_environment:
-    PATH: /share/apps/22.04/slurm/23.02.7/bin:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-xm55xzg3e4wbgjw3alsmrvhgtmb5f4dz/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/puppetlabs/bin
-    MANPATH: /share/apps/22.04/slurm/23.02.7/share/man:::/opt/puppetlabs/puppet/share/man
-    MODULEPATH: /share/apps/22.04/modulefiles/spack/core:/share/apps/22.04/modulefiles/spack/libs:/share/apps/22.04/modulefiles/spack/general:/share/apps/22.04/modulefiles/manual:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-xm55xzg3e4wbgjw3alsmrvhgtmb5f4dz/modulefiles
-    MODULESHOME: /share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-xm55xzg3e4wbgjw3alsmrvhgtmb5f4dz
+  copy_environment: true
