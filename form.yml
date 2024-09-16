@@ -20,10 +20,10 @@ attributes:
       If needed, enter any additional modules to be loaded separated by spaces (i.e cuda/11.7.1 nvhpc/23.1 )
   auto_accounts:
     help: |
-      Select the slurm group account (i.e adamgrp)
+      Select the slurm group account (i.e hpccfgrp)
   auto_queues:
     help: |
-      Select a slurm partition. **We strongly recommend a high priority partition**
+      Select a slurm partition.
   cores:
     widget: "number_field"
     label: "Number of cores"
