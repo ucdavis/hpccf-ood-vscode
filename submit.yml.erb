@@ -11,4 +11,6 @@ script:
     - "--gres"
     - "gpu:<%= gpu_num.to_s %>"
     <%- end -%>
-  copy_environment: true
+  job_environment:
+    PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
+    HOME: <%= Pathname.new(ENV['HOME']) %>
