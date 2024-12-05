@@ -13,5 +13,5 @@ script:
     <%- end -%>
   job_environment:
     PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
-    HOME: <%= Pathname.new(ENV['HOME']) %>
-    USER: <%= ENV['USER'] %>
+    HOME: <%= Pathname.new(ENV['HOME']).to_s %>
+    USER: <%= ENV['USER'].to_s %>
