@@ -8,8 +8,8 @@ script:
     - "--mem"
     - "<%= mem %>G"
     <%- if gpu_num.to_i > 0 -%>
-    - "--gres"
-    - "gpu:<%= gpu_num.to_s %>"
+    - "--gpus"
+    - "<%= gpu_num.to_s %>"
     <%- end -%>
   job_environment:
     PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
