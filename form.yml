@@ -7,6 +7,7 @@ form:
   - cores
   - mem
   - gpu_num
+  - gpu_type
   - extra_modules
   - bc_num_hours
   - working_dir
@@ -48,6 +49,12 @@ attributes:
     max: 8
     help: |
       Enter the amount of GPUs needed for your job
+  gpu_type:
+    widget: "text_field"
+    label: "Type of GPU(s)"
+    help: |
+      Enter a constraint on the GPU type (i.e. a5500).
+      **Advanced use only**, do not use unless you know what you're doing. (optional)
   bc_num_hours:
     max: 60
     help: |
