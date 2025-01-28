@@ -10,7 +10,7 @@ form:
   - gpu_type
   - extra_modules
   - bc_num_hours
-  - working_dir
+  - path
 
 attributes:
   modules: "code-server"
@@ -59,10 +59,12 @@ attributes:
     max: 60
     help: |
       Your job will be automatically killed after this amount of time
-  working_dir:
+  path:
+    widget: "path_selector"
     label: "Working Directory"
-    data-filepicker: true
-    data-target-file-type: dirs  # Valid values are: files, dirs, or both
-    readonly: false
+    show_hidden: true
+    show_files: false
+    favorites:
+      - /fs/scratch
     help: |
-      Select the directory wherein you want to work (defaults to $HOME)
+      Select the directory wherein you want to open and use this app (defaults to $HOME)
