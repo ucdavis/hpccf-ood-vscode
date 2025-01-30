@@ -62,6 +62,7 @@ attributes:
   path:
     widget: "path_selector"
     label: "Working Directory"
+    required: true
     show_hidden: true
     show_files: false
     favorites:
