@@ -11,6 +11,7 @@ form:
   - extra_modules
   - bc_num_hours
   - path
+  - bc_email_on_started
 
 attributes:
   modules: "code-server"
