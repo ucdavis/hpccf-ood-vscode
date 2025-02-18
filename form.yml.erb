@@ -63,10 +63,11 @@ attributes:
   path:
     widget: "path_selector"
     label: "Working Directory"
-    required: true
+    value: <%= ENV['HOME'] %>
     show_hidden: true
     show_files: false
     favorites:
-      - /fs/scratch
+      - <%= ENV['HOME'] %>
+      - /scratch
     help: |
-      Select the directory wherein you want to open and use this app (defaults to $HOME)
+      Select the directory wherein you want to open and use this app
