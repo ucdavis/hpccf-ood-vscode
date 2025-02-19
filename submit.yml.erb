@@ -8,11 +8,10 @@ script:
     - "--mem"
     - "<%= mem %>G"
     <%- if gpu_num.to_i > 0 -%>
-    - "--gres"
-    - "gpu:<%= gpu_num.to_s %>"
+    - "--gpus"
+    - "<%= "#{gpu_type}:" unless gpu_type.blank? %><%= gpu_num %>"
     <%- end -%>
   job_environment:
-    PATH: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.5-fcgpdtrttyjnknyfggpme7yhbcfhak76/bin:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ucx-1.14.1-5dulpdsnm3hap6cd4kszsvhqz564po7m/bin:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slurm-23-02-7-1-tzhklvjxidxdlh3ho6vb6wupj6dq4bgi/bin:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppetlabs/bin
-    MODULEPATH: /share/apps/22.04/modulefiles/spack/core:/share/apps/22.04/modulefiles/spack/software:/share/apps/franklin/modulefiles:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/modulefiles
-    MODULESHOME: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv
-    MANPATH: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.5-fcgpdtrttyjnknyfggpme7yhbcfhak76/share/man:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slurm-23-02-7-1-tzhklvjxidxdlh3ho6vb6wupj6dq4bgi/share/man:::/opt/puppetlabs/puppet/share/man
+    PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
+    HOME: <%= ENV['HOME'].to_s %>
+    USER: <%= ENV['USER'].to_s %>
