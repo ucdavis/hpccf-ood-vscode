@@ -7,9 +7,11 @@ form:
   - cores
   - mem
   - gpu_num
+  - gpu_type
   - extra_modules
   - bc_num_hours
-  - working_dir
+  - path
+  - bc_email_on_started
 
 attributes:
   modules: "code-server"
@@ -48,14 +50,23 @@ attributes:
     max: 8
     help: |
       Enter the amount of GPUs needed for your job
+  gpu_type:
+    widget: "text_field"
+    label: "Type of GPU(s)"
+    help: |
+      Enter a constraint on the GPU type (i.e. a5500).
+      **Advanced use only**, do not use unless you know what you're doing. (optional)
   bc_num_hours:
-    max: 60
     help: |
       Your job will be automatically killed after this amount of time
-  working_dir:
+  path:
+    widget: "path_selector"
     label: "Working Directory"
-    data-filepicker: true
-    data-target-file-type: dirs  # Valid values are: files, dirs, or both
-    readonly: false
+    value: <%= ENV['HOME'] %>
+    show_hidden: true
+    show_files: false
+    favorites:
+      - <%= ENV['HOME'] %>
+      - /scratch
     help: |
-      Select the directory wherein you want to work (defaults to $HOME)
+      Select the directory wherein you want to open and use this app
