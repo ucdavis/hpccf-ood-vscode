@@ -17,3 +17,6 @@ script:
     PATH: /bin:/sbin:/usr/bin:/usr/sbin:/snap/bin:/opt/puppetlabs/bin
     HOME: <%= ENV['HOME'].to_s %>
     USER: <%= ENV['USER'].to_s %>
+    #CODE_SERVER_CONFIG: <%= "#{staged_root}/config.yml" %>
+    CODE_SERVER_HOST: 0.0.0.0
+    DATADIR: <%= ENV["HOME"].to_s %>/.local/share/code-server
